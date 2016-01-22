@@ -14,6 +14,7 @@
     "request": "^2.67.0",
     "tile-cover": "^3.0.1",
     "turf-distance": "^1.1.0",
+    "turf-line-distance": "^1.0.2",
     "turf-point": "^2.0.1"
   }
 }
