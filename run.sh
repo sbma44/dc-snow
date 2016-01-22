@@ -41,14 +41,11 @@ aws s3 cp all.zip s3://sbma44-dc/plows/all.zip
 rm all.zip
 
 # build janky index
-INDEX="<!doctype html><html><head></head><body><p><iframe width=\"420\" height=\"315\" src=\"https://www.youtube.com/embed/9yaJGFdhNkU\" frameborder=\"0\" allowfullscreen></iframe></p><p><em>last updated at $(date)</em></p><ul><li><strong><a href=\"https://s3.amazonaws.com/sbma44-dc/plows/all.zip\">all.zip</a></strong></li>"
-for line in $(aws s3 ls s3://sbma44-dc/plows/ | awk '{print $4}' | grep geojson); do
-    INDEX="$INDEX <li><a href=\"https://s3.amazonaws.com/sbma44-dc/plows/$line\">$line</li>"
-done
-INDEX="$INDEX </ul></body></html>"
-echo $INDEX > index.html
+aws s3 ls s3://sbma44-dc/plows/ | awk '{print $4}' | grep geojson > files.txt
+node bin/html.js "https://s3.amazonaws.com/sbma44-dc/plows/" "$(pwd)/files.txt" > index.html
 aws s3 cp index.html s3://sbma44-dc/plows/index.html
 rm index.html
+rm files.txt
 
 # copy events
 for f in $WORKING_DIR/events/*.json; do
