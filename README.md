@@ -11,6 +11,13 @@ export WORKING_DIR='/tmp/snow'
 mkdir -p $WORKING_DIR/scrape
 ```
 
+set AWS & Github credentials in `.credentials`
+
 Use
 ===
-`node index.js`
+```
+while [ 1 ]; do
+  ./run.sh
+  sleep 300
+done
+```
