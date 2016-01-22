@@ -2,6 +2,7 @@ set -eu
 
 source $(dirname $0)/.credentials
 
+export TZ='America/New_York'
 export WORKING_DIR='/tmp/snow'
 mkdir -p $WORKING_DIR/scrape || true
 mkdir -p $WORKING_DIR/events || true
