@@ -28,7 +28,7 @@ for f in $(dirname $0)/data/plows/*.geojson; do
     git add "$f"
 done
 git commit -m "updated as of $(date)" || true
-git push origin master
+git push https://${GITHUB_TOKEN}:@github.com/sbma44/dc-snow.git master
 
 # push to AWS
 for f in $(dirname $0)/data/plows/*.geojson; do
