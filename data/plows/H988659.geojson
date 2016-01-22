@@ -18,8 +18,8 @@
         ],
         "saltSegments": [
           [
-            0,
-            8
+            11,
+            7
           ]
         ],
         "plowSegments": []
@@ -83,7 +83,7 @@
         "saltSegments": [
           [
             0,
-            11
+            10
           ]
         ],
         "plowSegments": []
