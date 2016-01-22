@@ -1,5 +1,7 @@
 set -eu
 
+source $(dirname $0)/.credentials
+
 export WORKING_DIR='/tmp/snow'
 mkdir -p $WORKING_DIR/scrape || true
 mkdir -p $WORKING_DIR/events || true
@@ -7,8 +9,11 @@ mkdir -p $WORKING_DIR/plows || true
 
 pushd "$(dirname $0)" > /dev/null
 
+# copy events
+aws s3 ls s3://sbma44-dc/events/ | awk '{print $4}' | parallel -j4 "aws s3 cp s3://sbma44-dc/events/{} $WORKING_DIR/events/{}"
+
 # scrape
-# node index.js
+node index.js
 
 # convert to geojson
 node lib/geojson.js
@@ -26,7 +31,6 @@ git commit -m "updated as of $(date)" || true
 git push origin master
 
 # push to AWS
-source $(dirname $0)/.aws_credentials
 for f in $(dirname $0)/data/plows/*.geojson; do
     aws s3 cp $f s3://sbma44-dc/plows/$(basename $f)
 done
@@ -45,5 +49,10 @@ INDEX="$INDEX </ul></body></html>"
 echo $INDEX > index.html
 aws s3 cp index.html s3://sbma44-dc/plows/index.html
 rm index.html
+
+# copy events
+for f in $WORKING_DIR/events/*.json; do
+    aws s3 cp $f s3://sbma44-dc/events/$(basename $f)
+done
 
 popd > /dev/null
