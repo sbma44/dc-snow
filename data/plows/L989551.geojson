@@ -7,15 +7,10 @@
         "name": "L989551",
         "contractor": false,
         "times": [
-          "2016-01-22T15:18:23.000Z",
-          "2016-01-22T15:38:23.000Z"
+          "2016-01-22T15:24:53.000Z",
+          "2016-01-22T15:36:53.000Z"
         ],
-        "saltSegments": [
-          [
-            0,
-            2
-          ]
-        ],
+        "saltSegments": [],
         "plowSegments": []
       },
       "geometry": {

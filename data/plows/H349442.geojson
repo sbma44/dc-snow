@@ -10,7 +10,12 @@
           "2016-01-22T18:54:15.000Z",
           "2016-01-22T18:54:25.000Z"
         ],
-        "saltSegments": [],
+        "saltSegments": [
+          [
+            0,
+            2
+          ]
+        ],
         "plowSegments": []
       },
       "geometry": {
