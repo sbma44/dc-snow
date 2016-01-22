@@ -9,6 +9,7 @@
   "author": "Tom Lee <thomas.j.lee@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "exec-sync": "^0.1.6",
     "fastlog": "^1.1.0",
     "queue-async": "^1.1.0",
     "request": "^2.67.0",

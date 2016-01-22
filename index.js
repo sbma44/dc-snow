@@ -5,9 +5,10 @@ var cover = require('tile-cover');
 var queue = require('queue-async');
 var tracker = require('./lib/dc/avlTrackernew');
 var logger = require('fastlog')('dc-snow');
+var execSync = require('exec-sync');
 var point = require('turf-point');
 var distance = require('turf-distance');
-var dc = JSON.parse(fs.readFileSync('data/dc.json'));
+var dc = JSON.parse(fs.readFileSync('data/dc.geojson'));
 
 var limits = { min_zoom: 14, max_zoom: 14 };
 var tiles = cover.geojson(dc.features[0].geometry, limits);
@@ -156,12 +157,23 @@ function geojson(callback) {
                 return feat.geometry.coordinates.length > 1;
             });
 
-            logger.debug('- writing GeoJSON from %s', f);
-            fs.writeFileSync(path.normalize(WORKING_DIR + '/' + obj.features[0].properties.name + '.geojson'), JSON.stringify(obj, null, 2));
+            if (obj.features.length > 0) {
+                logger.debug('- writing GeoJSON from %s', f);
+                fs.writeFileSync(path.normalize(WORKING_DIR + '/' + obj.features[0].properties.name + '.geojson'), JSON.stringify(obj, null, 2));
+            }
         });
     });
 
     callback();
+}
+
+function copy(callback) {
+    fs.readdirSync(path.normalize(WORKING_DIR)).forEach(function(f) {
+        if (/(scrape|-events\.json)/.test(f))
+            return;
+        fs.createReadStream(path.normalize(WORKING_DIR + '/' + f)).pipe(fs.createWriteStream(__dirname + '/data/plows/' + f));
+    });
+    //execSync(__dirname + '/upload.sh');
 }
 
 function scrape() {
@@ -192,6 +204,8 @@ function scrape() {
     q.defer(assemble, run);
 
     q.defer(geojson);
+
+    q.defer(copy);
 
     q.awaitAll(function(err, results) {
         if (err) throw err;
