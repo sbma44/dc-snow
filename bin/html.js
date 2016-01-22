@@ -6,7 +6,8 @@ html +=  "<p><em>last updated at " + (new Date()).toString() + "</em></p><ul><li
 
 files = fs.readFileSync(path.normalize(process.argv[3])).toString().split('\n');
 files.forEach(function(f) {
-    html += '<li><a href="' + process.argv[2] + f + '">' + f + '</a></li>';
+    if (f.strip().length > 0)
+        html += '<li><a href="' + process.argv[2] + f + '">' + f + '</a></li>';
 });
 
 html += fs.readFileSync(path.normalize(__dirname + '/../data/html/footer.html'));
