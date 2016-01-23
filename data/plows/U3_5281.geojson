@@ -7,6 +7,32 @@
         "name": "U3_5281",
         "contractor": false,
         "times": [
+          "2016-01-23T11:08:21.000Z",
+          "2016-01-23T12:24:44.000Z"
+        ],
+        "saltSegments": [],
+        "plowSegments": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -76.9821,
+            38.91494
+          ],
+          [
+            -76.98216,
+            38.9149
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "U3_5281",
+        "contractor": false,
+        "times": [
           "2016-01-23T10:34:31.000Z",
           "2016-01-23T10:34:51.000Z",
           "2016-01-23T10:39:41.000Z",
