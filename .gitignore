@@ -1,1 +1,3 @@
 .aws_credentials
+node_modules
+*.geojson

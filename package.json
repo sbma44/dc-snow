@@ -10,6 +10,10 @@
   "license": "ISC",
   "dependencies": {
     "fastlog": "^1.1.0",
+    "geojson-merge": "^0.1.0",
+    "mapbox": "^0.12.0",
+    "mapbox-upload": "^4.2.1",
+    "md5": "^2.0.0",
     "queue-async": "^1.1.0",
     "request": "^2.67.0",
     "tile-cover": "^3.0.1",

@@ -50,6 +50,12 @@ aws s3 cp plowStats.csv s3://sbma44-dc/plows/plowStats.csv
 rm stats.csv
 rm plowStats.csv
 
+# snapped hour traces
+node bin/hourTraces.js
+for f in hour-snapped-*.geojson; do
+    node_modules/mapbox-upload/bin/upload.js sbma44.dcsnow-$(basename $f .geojson) $f
+done
+
 # build janky index
 aws s3 ls s3://sbma44-dc/plows/ | awk '{print $4}' | grep geojson > files.txt
 node bin/html.js "https://s3.amazonaws.com/sbma44-dc/plows/" "$(pwd)/files.txt" > index.html
