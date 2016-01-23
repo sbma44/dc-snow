@@ -1,0 +1,31 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "H9810770",
+        "contractor": false,
+        "times": [
+          "2016-01-21T18:53:01.000Z",
+          "2016-01-21T18:57:11.000Z"
+        ],
+        "saltSegments": [],
+        "plowSegments": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -76.98149,
+            38.91822
+          ],
+          [
+            -76.98158,
+            38.91849
+          ]
+        ]
+      }
+    }
+  ]
+}
