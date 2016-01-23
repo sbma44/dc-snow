@@ -7,6 +7,83 @@
         "name": "L348818",
         "contractor": false,
         "times": [
+          "2016-01-23T06:38:22.000Z",
+          "2016-01-23T06:42:21.000Z",
+          "2016-01-23T06:45:01.000Z"
+        ],
+        "saltSegments": [
+          [
+            2,
+            2
+          ]
+        ],
+        "plowSegments": [
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0864,
+            38.93455
+          ],
+          [
+            -77.08655,
+            38.93479
+          ],
+          [
+            -77.08753,
+            38.93571
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "L348818",
+        "contractor": false,
+        "times": [
+          "2016-01-23T06:33:41.000Z",
+          "2016-01-23T06:34:21.000Z"
+        ],
+        "saltSegments": [
+          [
+            27,
+            1
+          ]
+        ],
+        "plowSegments": [
+          [
+            27,
+            1
+          ]
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.07935,
+            38.94318
+          ],
+          [
+            -77.08178,
+            38.94278
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "L348818",
+        "contractor": false,
+        "times": [
           "2016-01-23T05:27:42.000Z",
           "2016-01-23T05:29:01.000Z",
           "2016-01-23T05:29:41.000Z",
@@ -35,8 +112,18 @@
           "2016-01-23T06:23:01.000Z",
           "2016-01-23T06:25:41.000Z"
         ],
-        "saltSegments": [],
-        "plowSegments": []
+        "saltSegments": [
+          [
+            2,
+            26
+          ]
+        ],
+        "plowSegments": [
+          [
+            2,
+            26
+          ]
+        ]
       },
       "geometry": {
         "type": "LineString",
