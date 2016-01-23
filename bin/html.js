@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 
-var html = fs.readFileSync(path.normalize(__dirname + '/../data/html/header.html')).replace('{{DATE}}',(new Date()).toString());
+var html = fs.readFileSync(path.normalize(__dirname + '/../data/html/header.html')).toString().replace('{{DATE}}',(new Date()).toString());
 
 files = fs.readFileSync(path.normalize(process.argv[3])).toString().split('\n');
 files.forEach(function(f) {

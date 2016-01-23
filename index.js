@@ -12,7 +12,7 @@ var distance = require('turf-distance');
 var dc = JSON.parse(fs.readFileSync('data/dc.geojson'));
 
 
-var limits = { min_zoom: 14, max_zoom: 14 };
+var limits = { min_zoom: 15, max_zoom: 15 };
 var tiles = cover.geojson(dc.features[0].geometry, limits);
 
 var WORKING_DIR = path.normalize(process.env.WORKING_DIR || process.argv[2] || '/mnt/persist/snow/');
