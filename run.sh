@@ -41,6 +41,11 @@ zip all.zip $(dirname $0)/data/plows/*.geojson
 aws s3 cp all.zip s3://sbma44-dc/plows/all.zip
 rm all.zip
 
+# stats
+node bin/analyze.js csv > stats.csv
+aws s3 cp stats.csv s3://sbma44-dc/plows/stats.csv
+rm stats.csv
+
 # build janky index
 aws s3 ls s3://sbma44-dc/plows/ | awk '{print $4}' | grep geojson > files.txt
 node bin/html.js "https://s3.amazonaws.com/sbma44-dc/plows/" "$(pwd)/files.txt" > index.html

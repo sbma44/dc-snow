@@ -4,10 +4,8 @@ var path = require('path');
 var linedist = require('turf-line-distance');
 var slice = require('../lib/sliceTrace');
 
-function stats(offset, span) {
+function stats(start, end) {
     var sum = plow = salt = 0;
-    var end = (+(new Date()) - (offset * 3600 * 1000));
-    var start = new Date((+end) - (span * 3600 * 1000));
     fs.readdirSync(path.normalize(__dirname + '/../data/plows/')).forEach(function(f) {
         var fc = JSON.parse(fs.readFileSync(path.normalize(__dirname + '/../data/plows/' + f)));
         fc.features.forEach(function(feat) {
@@ -30,22 +28,37 @@ function display(result) {
 }
 
 if (require.main === module) {
-    console.log('=== all data ===');
-    display(stats(0, 1000 * 365 * 24));
+    if (process.argv[2] === 'csv') {
+        var scrapeStart = new Date('Fri Jan 22 2016 00:00:00 GMT-0500 (EST)');
+        var i = 0;
+        var data = [['hours ago', 'plow', 'salt', 'other/unknown']];
 
-    console.log();
-    console.log('=== last 24 hrs ===')
-    display(stats(0, 24));
+        var now = +new Date();
 
-    console.log();
-    console.log('=== last 12 hrs ===')
-    display(stats(0, 12));
+        // record fractional current hour
+        var hourStart = now - (now % (24 * 3600 * 1000));
+        var s = stats(new Date(hourStart), new Date(now));
+        data.push([(new Date(now).getHours()), s.plow, s.salt, s.total - (s.plow + s.salt)]);
 
-    console.log();
-    console.log('=== last 6 hrs ===')
-    display(stats(0, 6));
+        while(new Date(hourStart) > scrapeStart) {
+            var s = stats(new Date(hourStart - (3600 * 1000)), new Date(hourStart));
+            data.push([(new Date(hourStart - (1800 * 1000)).getHours()), s.plow, s.salt, s.total - (s.plow + s.salt)]);
+            hourStart = hourStart - (3600 * 1000);
+        }
+        data.forEach(function(line) {
+            console.log(line.join(','));
+        })
+    }
+    else {
+        var end = new Date();
 
-    console.log();
-    console.log('=== last 3 hrs ===')
-    display(stats(0, 3));
+        console.log('=== all data ===');
+        display(stats(new Date('1/1/1970'), end));
+
+        [24, 12, 6, 3].forEach(function(h) {
+            console.log();
+            console.log('=== last ' + h + ' hrs ===')
+            display(stats(new Date((+end) - (h * 3600 * 1000)), end));
+        });
+    }
 }
