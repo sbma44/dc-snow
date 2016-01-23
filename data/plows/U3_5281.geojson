@@ -7,6 +7,32 @@
         "name": "U3_5281",
         "contractor": false,
         "times": [
+          "2016-01-23T07:23:01.000Z",
+          "2016-01-23T07:23:11.000Z"
+        ],
+        "saltSegments": [],
+        "plowSegments": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.06789,
+            38.91512
+          ],
+          [
+            -77.06791,
+            38.91504
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "U3_5281",
+        "contractor": false,
+        "times": [
           "2016-01-23T05:56:02.000Z",
           "2016-01-23T05:59:52.000Z",
           "2016-01-23T05:59:54.000Z",
@@ -32,7 +58,12 @@
           "2016-01-23T06:24:52.000Z"
         ],
         "saltSegments": [],
-        "plowSegments": []
+        "plowSegments": [
+          [
+            28,
+            22
+          ]
+        ]
       },
       "geometry": {
         "type": "LineString",
