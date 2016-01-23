@@ -7,6 +7,109 @@
         "name": "L349043",
         "contractor": false,
         "times": [
+          "2016-01-23T13:58:30.000Z",
+          "2016-01-23T13:58:50.000Z",
+          "2016-01-23T13:59:40.000Z"
+        ],
+        "saltSegments": [],
+        "plowSegments": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.04643,
+            38.9604
+          ],
+          [
+            -77.04914,
+            38.96101
+          ],
+          [
+            -77.05369,
+            38.96134
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "L349043",
+        "contractor": false,
+        "times": [
+          "2016-01-23T13:52:00.000Z",
+          "2016-01-23T13:52:20.000Z",
+          "2016-01-23T13:52:40.000Z"
+        ],
+        "saltSegments": [],
+        "plowSegments": [
+          [
+            3,
+            2
+          ]
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.01902,
+            38.95809
+          ],
+          [
+            -77.02105,
+            38.95874
+          ],
+          [
+            -77.02306,
+            38.95941
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "L349043",
+        "contractor": false,
+        "times": [
+          "2016-01-23T13:50:10.000Z",
+          "2016-01-23T13:50:21.000Z",
+          "2016-01-23T13:50:40.000Z"
+        ],
+        "saltSegments": [],
+        "plowSegments": [
+          [
+            16,
+            2
+          ]
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.01102,
+            38.95547
+          ],
+          [
+            -77.01163,
+            38.95567
+          ],
+          [
+            -77.01317,
+            38.95618
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "L349043",
+        "contractor": false,
+        "times": [
           "2016-01-23T10:29:31.000Z",
           "2016-01-23T10:29:41.000Z",
           "2016-01-23T10:29:51.000Z",
@@ -25,7 +128,12 @@
           "2016-01-23T11:51:21.000Z"
         ],
         "saltSegments": [],
-        "plowSegments": []
+        "plowSegments": [
+          [
+            4,
+            15
+          ]
+        ]
       },
       "geometry": {
         "type": "LineString",
