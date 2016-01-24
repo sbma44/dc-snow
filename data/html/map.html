@@ -12,7 +12,6 @@
     </style>
 </head>
 <body>
-
 <div id='map'></div>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2JtYTQ0IiwiYSI6ImNpanJ3dmh5ejBnZDJ1Zm01MnduN2wyc3EifQ.gg0o7K6PmRybP8-u9KB4mA';
@@ -22,6 +21,28 @@ var map = new mapboxgl.Map({
     center: [-77.0313, 38.8966], // starting position
     zoom: 11 // starting zoom
 });
+
+map.addControl(new mapboxgl.Navigation());
+
+// ugh, I know :-(
+function addAbout() {
+    var attrib = document.getElementsByClassName('mapboxgl-ctrl-attrib mapboxgl-ctrl');
+    console.log(attrib);
+    if (attrib.length === 0) {
+        setTimeout(addAbout, 100);
+    }
+    else {
+        var about = document.createElement('a');
+        var s = document.createElement('strong');
+        s.innerText = 'About ';
+        about.appendChild(s);
+        about.style = 'font-weight: bold';
+        about.href = 'http://sbma44-dc.s3-website-us-east-1.amazonaws.com/plows/';
+        attrib[0].insertBefore(about, attrib[0].firstChild);
+    }
+}
+
+setTimeout(addAbout, 3000);
 </script>
 
 </body>
