@@ -7,11 +7,93 @@
         "name": "L987141",
         "contractor": false,
         "times": [
+          "2016-01-24T22:02:24.000Z",
+          "2016-01-24T22:03:33.000Z",
+          "2016-01-24T22:04:33.000Z"
+        ],
+        "saltSegments": [],
+        "plowSegments": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -76.9787,
+            38.91672
+          ],
+          [
+            -76.97844,
+            38.919
+          ],
+          [
+            -76.97949,
+            38.91955
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "L987141",
+        "contractor": false,
+        "times": [
+          "2016-01-24T21:50:39.000Z",
+          "2016-01-24T21:50:49.000Z",
+          "2016-01-24T21:52:09.000Z",
+          "2016-01-24T21:52:19.000Z",
+          "2016-01-24T21:52:29.000Z"
+        ],
+        "saltSegments": [],
+        "plowSegments": [
+          [
+            2,
+            4
+          ]
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -76.97896,
+            38.90165
+          ],
+          [
+            -76.97897,
+            38.90232
+          ],
+          [
+            -76.97898,
+            38.906
+          ],
+          [
+            -76.97899,
+            38.90646
+          ],
+          [
+            -76.97903,
+            38.90666
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "L987141",
+        "contractor": false,
+        "times": [
           "2016-01-24T21:44:49.000Z",
           "2016-01-24T21:45:09.000Z"
         ],
         "saltSegments": [],
-        "plowSegments": []
+        "plowSegments": [
+          [
+            37,
+            1
+          ]
+        ]
       },
       "geometry": {
         "type": "LineString",
