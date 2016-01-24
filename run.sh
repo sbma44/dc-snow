@@ -52,7 +52,7 @@ rm plowStats.csv
 
 # snapped hour traces
 node bin/hourTraces.js
-for f in hour-snapped-*.geojson; do
+for f in snapped-ago-*.geojson; do
     node_modules/mapbox-upload/bin/upload.js sbma44.dcsnow-$(basename $f .geojson) $f
 done
 

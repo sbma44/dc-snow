@@ -29,8 +29,10 @@ function calculate(hourOffset, callback) {
             fs.writeFileSync(start.toISOString().split(':')[0] + 'Z.geojson', JSON.stringify(merged));
 
         var snapped = merge(results);
-        if (snapped.features.length > 0)
+        if (snapped.features.length > 0) {
             fs.writeFileSync('snapped-' + start.toISOString().split(':')[0] + 'Z.geojson', JSON.stringify(snapped));
+            fs.writeFileSync('snapped-ago-' + hourOffset + '.geojson', JSON.stringify(snapped));
+        }
 
         callback();
     });
