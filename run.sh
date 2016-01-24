@@ -52,12 +52,12 @@ rm plowStats.csv
 
 # snapped hour traces
 node bin/hourTraces.js 24
-for f in $(seq 1 8); do
+for i in $(seq 1 8); do
     FILENAME="snapped-ago-$i.geojson"
     node_modules/mapbox-upload/bin/upload.js sbma44.dcsnow-$(basename $FILENAME .geojson) $FILENAME
     rm $FILENAME
 done
-node node_modules/geojson-merge/index.js snapped-ago-*.geojson > remainder.geojson
+node_modules/geojson-merge/geojson-merge snapped-ago-*.geojson > remainder.geojson
 node_modules/mapbox-upload/bin/upload.js sbma44.dcsnow-9 remainder.geojson
 rm remainder.geojson
 
