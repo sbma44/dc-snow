@@ -1,3 +1,4 @@
 .aws_credentials
 node_modules
 ./*.geojson
+data/matched/*.geojson

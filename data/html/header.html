@@ -32,6 +32,14 @@ body {
 
     <p><em>last updated at {{DATE}}</em></p>
 
+    <h2>Last 24 hours</h2>
+
+    <iframe width="960" height="600" src="http://sbma44-dc.s3-website-us-east-1.amazonaws.com/plows/map.html?embed=true" frameborder="0"></iframe>
+
+    <p>Recent traces are bright yellow; older traces fade to dark red. Colors are per-hour, until the darkest layer which contains hours 9-24. (<a href="http://sbma44-dc.s3-website-us-east-1.amazonaws.com/plows/map.html">fullscreen</a>)</p>
+
+    <p>Please keep in mind that GPS data is lossy, as is the map-matching process used to snap traces to road geometry.</p>
+
     <div id="graph"><h2>Miles Treated By Hour</h2></div>
 
     <div id="plowgraph"><h2>Active Plows By Hour</h2></div>
