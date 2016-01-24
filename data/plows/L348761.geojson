@@ -7,6 +7,32 @@
         "name": "L348761",
         "contractor": false,
         "times": [
+          "2016-01-24T15:38:25.000Z",
+          "2016-01-24T18:43:47.000Z"
+        ],
+        "saltSegments": [],
+        "plowSegments": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.07431,
+            38.9597
+          ],
+          [
+            -77.07418,
+            38.95976
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "L348761",
+        "contractor": false,
+        "times": [
           "2016-01-23T16:35:35.000Z",
           "2016-01-23T16:39:15.000Z",
           "2016-01-23T16:39:25.000Z",
