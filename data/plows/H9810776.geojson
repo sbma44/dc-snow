@@ -7,6 +7,32 @@
         "name": "H9810776",
         "contractor": false,
         "times": [
+          "2016-01-24T06:19:28.000Z",
+          "2016-01-24T06:19:48.000Z"
+        ],
+        "saltSegments": [],
+        "plowSegments": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -76.92185,
+            38.89825
+          ],
+          [
+            -76.92183,
+            38.89822
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "H9810776",
+        "contractor": false,
+        "times": [
           "2016-01-24T05:57:09.000Z",
           "2016-01-24T05:57:29.000Z",
           "2016-01-24T05:57:58.000Z",
@@ -14,7 +40,12 @@
           "2016-01-24T05:58:39.000Z"
         ],
         "saltSegments": [],
-        "plowSegments": []
+        "plowSegments": [
+          [
+            7,
+            4
+          ]
+        ]
       },
       "geometry": {
         "type": "LineString",
