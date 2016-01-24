@@ -25,8 +25,10 @@ function calculate(hourOffset, callback) {
     q.awaitAll(function(err, results) {
         console.log('- writing results for ' + start.toISOString().split(':')[0] + 'Z');
         var merged = merge(toMerge);
-        if (merged.features.length > 0)
+        if (merged.features.length > 0) {
             fs.writeFileSync(start.toISOString().split(':')[0] + 'Z.geojson', JSON.stringify(merged));
+            fs.writeFileSync('raw-ago-' + hourOffset + '.geojson', JSON.stringify(merged));
+        }
 
         var snapped = merge(results);
         if (snapped.features.length > 0) {
