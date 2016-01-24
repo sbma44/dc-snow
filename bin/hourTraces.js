@@ -40,7 +40,7 @@ function calculate(hourOffset, callback) {
 
 if (require.main === module) {
     var q = queue(1);
-    for(var h=0; h<12; h++) {
+    for(var h = 0; h < parseInt(process.argv[2]); h++) {
         q.defer(calculate, h);
     }
     q.awaitAll(function(err, results) {

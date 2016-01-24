@@ -51,10 +51,16 @@ rm stats.csv
 rm plowStats.csv
 
 # snapped hour traces
-node bin/hourTraces.js
-for f in snapped-ago-*.geojson; do
-    node_modules/mapbox-upload/bin/upload.js sbma44.dcsnow-$(basename $f .geojson) $f
+node bin/hourTraces.js 24
+for f in $(seq 1 8); do
+    FILENAME="snapped-ago-$i.geojson"
+    node_modules/mapbox-upload/bin/upload.js sbma44.dcsnow-$(basename $FILENAME .geojson) $FILENAME
+    rm $FILENAME
 done
+node node_modules/geojson-merge/index.js snapped-ago-*.geojson > remainder.geojson
+node_modules/mapbox-upload/bin/upload.js sbma44.dcsnow-9 remainder.geojson
+rm remainder.geojson
+
 
 # build janky index
 aws s3 ls s3://sbma44-dc/plows/ | awk '{print $4}' | grep geojson > files.txt
