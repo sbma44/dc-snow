@@ -324,7 +324,7 @@
         ],
         "saltSegments": [
           [
-            1,
+            2,
             2
           ]
         ],
@@ -344,6 +344,37 @@
           [
             -76.97886,
             38.9198
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "L3410569",
+        "contractor": false,
+        "times": [
+          "2016-01-24T20:20:12.000Z",
+          "2016-01-24T20:26:12.000Z"
+        ],
+        "saltSegments": [
+          [
+            3,
+            1
+          ]
+        ],
+        "plowSegments": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -76.98375,
+            38.9122
+          ],
+          [
+            -76.98333,
+            38.91219
           ]
         ]
       }
