@@ -48,5 +48,5 @@ function calculate(hourOffset, callback) {
 }
 
 if (require.main === module) {
-    calculate(parseInt(process.argv[2]), function() {}; );
+    calculate(parseInt(process.argv[2]), function() {});
 }
