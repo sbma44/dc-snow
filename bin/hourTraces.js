@@ -7,9 +7,16 @@ var match = require('../lib/match');
 
 function calculate(hourOffset, callback) {
     var q = queue(4);
-    var now = new Date();
-    var end = new Date((+now) - ((+now) % 3600000));
-    var start = new Date((+end) - (hourOffset * 3600 * 1000));
+    var now = +(new Date());
+    var start, end;
+    if (hourOffset === 0) {
+        start = new Date(now - (now % 3600000));
+        end = new Date(now);
+    }
+    else {
+        end = new Date(now - ((now % 3600000) + (hourOffset * 3600000)));
+        start = new Date(+end - 3600000);
+    }
     var toMerge = toMergeSnapped = [];
     fs.readdirSync(path.normalize(__dirname + '/../data/plows/')).forEach(function(f) {
         var fc = JSON.parse(fs.readFileSync(path.normalize(__dirname + '/../data/plows/' + f)));
@@ -41,11 +48,5 @@ function calculate(hourOffset, callback) {
 }
 
 if (require.main === module) {
-    var q = queue(1);
-    for(var h = 0; h < parseInt(process.argv[2]); h++) {
-        q.defer(calculate, h);
-    }
-    q.awaitAll(function(err, results) {
-        console.log('Done.');
-    });
+    calculate(parseInt(process.argv[2]), function() { console.log('- processed hour offset ' + process.argv[2])});
 }
