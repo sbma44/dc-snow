@@ -23,7 +23,12 @@
           "2016-01-25T06:45:12.000Z"
         ],
         "saltSegments": [],
-        "plowSegments": []
+        "plowSegments": [
+          [
+            2,
+            13
+          ]
+        ]
       },
       "geometry": {
         "type": "LineString",
