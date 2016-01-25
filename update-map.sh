@@ -5,7 +5,9 @@ source $(dirname $0)/.credentials
 pushd "$(dirname $0)" > /dev/null
 
 # snapped hour traces
-node bin/hourTraces.js 30
+HOURS_AGO="$(node -e "console.log(Math.round((new Date() - (new Date('Sat Jan 23 2016 23:55:00 GMT-0500 (EST)'))) / 3600000));")"
+echo "processing $HOURS_AGO hours..."
+node bin/hourTraces.js $HOURS_AGO
 
 for i in $(seq 1 8); do
     FILENAME="snapped-ago-$i.geojson"
