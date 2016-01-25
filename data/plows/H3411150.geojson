@@ -7,6 +7,32 @@
         "name": "H3411150",
         "contractor": false,
         "times": [
+          "2016-01-25T21:32:07.000Z",
+          "2016-01-25T21:33:27.000Z"
+        ],
+        "saltSegments": [],
+        "plowSegments": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -76.98212,
+            38.91504
+          ],
+          [
+            -76.98212,
+            38.91504
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "H3411150",
+        "contractor": false,
+        "times": [
           "2016-01-25T21:08:17.000Z",
           "2016-01-25T21:08:18.000Z",
           "2016-01-25T21:08:19.000Z",

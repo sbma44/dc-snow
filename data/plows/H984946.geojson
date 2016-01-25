@@ -581,7 +581,12 @@
             489
           ]
         ],
-        "plowSegments": []
+        "plowSegments": [
+          [
+            199,
+            566
+          ]
+        ]
       },
       "geometry": {
         "type": "LineString",
