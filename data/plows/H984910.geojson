@@ -2398,13 +2398,13 @@
         ],
         "saltSegments": [
           [
-            2,
+            3,
             37
           ]
         ],
         "plowSegments": [
           [
-            2,
+            3,
             37
           ]
         ]
@@ -2573,25 +2573,30 @@
         "name": "H984910",
         "contractor": false,
         "times": [
+          "2016-01-24T15:09:27.000Z",
           "2016-01-24T15:09:57.000Z",
           "2016-01-24T15:10:08.000Z"
         ],
         "saltSegments": [
           [
             20,
-            1
+            2
           ]
         ],
         "plowSegments": [
           [
             20,
-            1
+            2
           ]
         ]
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
+          [
+            -76.99075,
+            38.91229
+          ],
           [
             -76.98853,
             38.91144
