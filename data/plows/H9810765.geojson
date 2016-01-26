@@ -76,7 +76,12 @@
             53
           ]
         ],
-        "plowSegments": []
+        "plowSegments": [
+          [
+            25,
+            61
+          ]
+        ]
       },
       "geometry": {
         "type": "LineString",
