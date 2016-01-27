@@ -43,6 +43,9 @@ var svg = d3.select("#graph").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.csv("http://sbma44-dc.s3-website-us-east-1.amazonaws.com/plows/stats.csv", function(error, data) {
+
+  data.reverse();
+
   if (error) throw error;
   color.domain(d3.keys(data[0]).filter(function(key) { return key !== "hours ago"; }));
 
@@ -54,13 +57,19 @@ d3.csv("http://sbma44-dc.s3-website-us-east-1.amazonaws.com/plows/stats.csv", fu
 
   // data.sort(function(a, b) { return b.total - a.total; });
 
-  x.domain(data.map(function(d) { return d['hours ago']; }));
-  y.domain([0, d3.max(data, function(d) { return d.total; })]);
+  var xTicks = [];
+  x.domain(data.map(function(d) {
+    if (/(3|6|9|12)[ap]/.test(d['hours ago']))
+      xTicks.push(d['hours ago']);
+    else
+      xTicks.push(' ');
+    return d['hours ago'];
+  }));  y.domain([0, d3.max(data, function(d) { return d.total; })]);
 
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(xAxis)
+      .call(xAxis.tickValues(xTicks))
       .selectAll("text")
     .attr("y", 0)
     .attr("x", 9)
@@ -146,6 +155,9 @@ var svg = d3.select("#plowgraph").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.csv("http://sbma44-dc.s3-website-us-east-1.amazonaws.com/plows/plowStats.csv", function(error, data) {
+
+  data.reverse();
+
   if (error) throw error;
   color.domain(d3.keys(data[0]).filter(function(key) { return key !== "hours ago"; }));
 
@@ -156,14 +168,20 @@ d3.csv("http://sbma44-dc.s3-website-us-east-1.amazonaws.com/plows/plowStats.csv"
   });
 
   // data.sort(function(a, b) { return b.total - a.total; });
-
-  x.domain(data.map(function(d) { return d['hours ago']; }));
+  var xTicks = [];
+  x.domain(data.map(function(d) {
+    if (/(3|6|9|12)[ap]/.test(d['hours ago']))
+      xTicks.push(d['hours ago']);
+    else
+      xTicks.push(' ');
+    return d['hours ago'];
+  }));
   y.domain([0, d3.max(data, function(d) { return d.total; })]);
 
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(xAxis)
+      .call(xAxis.tickValues(xTicks))
       .selectAll("text")
     .attr("y", 0)
     .attr("x", 9)
