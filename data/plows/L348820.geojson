@@ -2233,6 +2233,37 @@
         "name": "L348820",
         "contractor": false,
         "times": [
+          "2016-01-26T12:51:16.000Z",
+          "2016-01-26T12:53:16.000Z"
+        ],
+        "saltSegments": [
+          [
+            2,
+            1
+          ]
+        ],
+        "plowSegments": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -76.98909,
+            38.91201
+          ],
+          [
+            -76.99332,
+            38.91289
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "L348820",
+        "contractor": false,
+        "times": [
           "2016-01-26T12:47:16.000Z",
           "2016-01-26T12:47:56.000Z"
         ],
