@@ -13,9 +13,11 @@ parallel -j $CPUNUM "node bin/hourTraces.js {}" ::: $(seq 0 $HOURS_AGO)
 
 for i in $(seq 1 8); do
     FILENAME="snapped-ago-$i.geojson"
-    echo "=== uploading $FILENAME"
-    node_modules/mapbox-upload/bin/upload.js sbma44.dcsnow-$(basename $FILENAME .geojson) $FILENAME || true
-    rm $FILENAME
+    if [ -f $FILENAME ]; then
+        echo "=== uploading $FILENAME"
+        node_modules/mapbox-upload/bin/upload.js sbma44.dcsnow-$(basename $FILENAME .geojson) $FILENAME || true
+        rm $FILENAME
+    fi
 done
 node_modules/geojson-merge/geojson-merge snapped-ago-*.geojson > remainder.geojson
 node_modules/mapbox-upload/bin/upload.js sbma44.dcsnow-9-2 remainder.geojson || true
@@ -23,9 +25,11 @@ rm remainder.geojson
 
 for i in $(seq 1 8); do
     FILENAME="raw-ago-$i.geojson"
-    echo "=== uploading $FILENAME"
-    node_modules/mapbox-upload/bin/upload.js sbma44.dcsnow-$(basename $FILENAME .geojson) $FILENAME || true
-    rm $FILENAME
+    if [ -f $FILENAME ]; then
+        echo "=== uploading $FILENAME"
+        node_modules/mapbox-upload/bin/upload.js sbma44.dcsnow-$(basename $FILENAME .geojson) $FILENAME || true
+        rm $FILENAME
+    fi
 done
 node_modules/geojson-merge/geojson-merge raw-ago-*.geojson > raw-remainder.geojson
 node_modules/mapbox-upload/bin/upload.js sbma44.dcsnow-raw-remainder raw-remainder.geojson || true
