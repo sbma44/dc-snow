@@ -748,7 +748,7 @@
         ],
         "saltSegments": [
           [
-            1,
+            2,
             4
           ]
         ],
@@ -776,6 +776,37 @@
           [
             -76.98094,
             38.91478
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "H9810231",
+        "contractor": false,
+        "times": [
+          "2016-01-28T14:00:58.000Z",
+          "2016-01-28T14:01:24.000Z"
+        ],
+        "saltSegments": [
+          [
+            4,
+            1
+          ]
+        ],
+        "plowSegments": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -76.98496,
+            38.91108
+          ],
+          [
+            -76.9838,
+            38.91213
           ]
         ]
       }
