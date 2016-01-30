@@ -59,6 +59,7 @@ function formatDate(d) {
             x += 'Sat';
             break;
     }
+    x += ' ' + d.getDate() + ' Jan';
     x += ' ' + ((d.getHours() % 12) === 0 ? '12' : (d.getHours() % 12).toString());
     x += (d.getHours() >= 12) ? 'p' : 'a';
     return x;

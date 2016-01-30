@@ -16,7 +16,7 @@ var GRAPH_WIDTH = 1200;
 (function() {
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = GRAPH_WIDTH - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    height = 600 - margin.top - margin.bottom;
 
 var x = d3.scale.ordinal()
     .rangeRoundBands([0, width], .1);
@@ -38,7 +38,7 @@ var yAxis = d3.svg.axis()
 
 var svg = d3.select("#graph").append("svg")
     .attr("width", width + margin.left + margin.right)
-    .attr("height", 50 + height + margin.top + margin.bottom)
+    .attr("height", 100 + height + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -128,7 +128,7 @@ d3.csv("http://sbma44-dc.s3-website-us-east-1.amazonaws.com/plows/stats.csv", fu
 (function() {
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = GRAPH_WIDTH - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    height = 600 - margin.top - margin.bottom;
 
 var x = d3.scale.ordinal()
     .rangeRoundBands([0, width], .1);
@@ -150,7 +150,7 @@ var yAxis = d3.svg.axis()
 
 var svg = d3.select("#plowgraph").append("svg")
     .attr("width", width + margin.left + margin.right)
-    .attr("height", 50 + height + margin.top + margin.bottom)
+    .attr("height", 100 + height + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
