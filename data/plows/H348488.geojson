@@ -8,12 +8,13 @@
         "contractor": false,
         "times": [
           "2016-01-31T13:07:23.000Z",
+          "2016-01-31T13:07:43.000Z",
           "2016-01-31T13:09:33.000Z"
         ],
         "saltSegments": [
           [
             2,
-            1
+            2
           ]
         ],
         "plowSegments": []
@@ -21,6 +22,10 @@
       "geometry": {
         "type": "LineString",
         "coordinates": [
+          [
+            -76.98252,
+            38.91495
+          ],
           [
             -76.98252,
             38.91495
